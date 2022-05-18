@@ -1,0 +1,311 @@
+:root{
+    --bg: radial-gradient(#061548, #00071E);
+    --primary: #FFFFFF;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    color: var(--primary);
+    background: var(--bg);
+    font-family: "Inter", "Sans-Serif";
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+h1{
+    font-size: 6.4rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+p{
+    font-size: 1.6rem;
+}
+
+p.name{
+    font-weight: 700;
+}
+
+.bold{
+    font-weight: 600;
+}
+
+.cards{
+    max-height: 75vh;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    align-items: center;
+    padding: clamp(1rem, 8vw, 4rem);
+    border-radius: 2rem;
+}
+
+.cards::-webkit-scrollbar{
+    display: none;
+}
+
+.cards .card{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    gap: 1.6rem;
+    padding: 1.6rem 3.6rem;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .25);
+    transition: 250ms;
+}
+
+.card:hover{
+    transform: scale(1.05);
+}
+.card:hover .background{
+    box-shadow: 0 0 25px 5px rgba(255, 255, 255, 1);
+}
+
+.card .background{
+    position: absolute;
+    opacity: .05;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(265.93deg, rgba(255, 255, 255), rgba(255, 255, 255, 0.25));
+    border-radius: 1rem;
+    transition: 250ms;
+}
+
+.card .crewmate{
+    height: 20rem;
+    width: 20rem;
+    border-radius: 1rem;
+}
+
+.card .crewmate.first{
+    background: url("./assets/pilot1.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.card .crewmate.second{
+    background: url("./assets/pilot2.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.card .crewmate.third{
+    background: url("./assets/pilot3.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.card .crewmate.fourth{
+    background: url("./assets/pilot4.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.card .crewmate.fifth{
+    background: url("./assets/pilot5.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.card .crewmate.sixth{
+    background: url("./assets/pilot6.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.person-information{
+    display: flex;
+    flex-direction: column;
+}
+
+.person-information hr{
+    width: 20%;
+    margin-left: 0;
+    border-radius: 5rem;
+    height: .35rem;
+    background-color: var(--primary);
+    border: none;
+}
+
+.person-information .person-char{
+    display: flex;
+    gap: 2.4rem
+}
+
+.person-information p.name{
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 680px) {
+    .person-information .person-char{
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .person-char .left p:nth-last-child(1){
+        margin-bottom: 0;
+    }
+
+    .person-information p.name{
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width: 880px) {
+    h1{
+        font-size: 5.2rem;
+    }
+
+    .card{
+        flex-direction: column;
+    }
+
+    .card p.name{
+        text-align: center;
+    }
+
+    .card .person-information hr{
+        margin: 0 auto;
+        width: 50%;
+    }
+}
+
+/* BACGKROUND SQUARES */
+.background{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    filter: blur(.25rem);
+    z-index: -1;
+    opacity: .35;
+}
+
+.background .square:nth-child(1){
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    background-color: rgba(255, 255, 255 0.75);
+    box-shadow: 0 0 50px 5px rgba(255, 255, 255, 0.25);
+    mix-blend-mode: overlay;
+    transform: rotate(25.96deg) translate(50rem);
+}
+.background .square:nth-child(1)::after{
+    content: "";
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    background-color: rgba(255, 255, 255 0.75);
+    box-shadow: 0 0 50px 5px rgba(255, 255, 255, 0.25);
+    mix-blend-mode: overlay;
+    transform: rotate(45.96deg) translate(60rem);
+}
+.background .square:nth-child(1)::before{
+    content: "";
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    background-color: rgba(255, 255, 255 0.75);
+    box-shadow: 0 0 50px 5px rgba(255, 255, 255, 0.25);
+    mix-blend-mode: overlay;
+    transform: rotate(5.951deg) translate(50rem);
+}
+
+.background .square:nth-child(2){
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    background-color: rgba(255, 255, 255 0.75);
+    box-shadow: 0 0 50px 5px rgba(255, 255, 255, 0.25);
+    mix-blend-mode: overlay;
+    transform: rotate(-25.96deg) translate(5rem);
+}
+.background .square:nth-child(2)::after{
+    content: "";
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    background-color: rgba(255, 255, 255 0.75);
+    box-shadow: 0 0 50px 5px rgba(255, 255, 255, 0.25);
+    mix-blend-mode: overlay;
+    transform: rotate(-36deg) translate(12.5rem);
+}
+.background .square:nth-child(2)::before{
+    content: "";
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    background-color: rgba(255, 255, 255 0.75);
+    box-shadow: 0 0 50px 5px rgba(255, 255, 255, 0.25);
+    mix-blend-mode: overlay;
+    transform: rotate(32deg) translate(14.96rem);
+}
+
+.background .square:nth-child(3){
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    background-color: rgba(255, 255, 255 0.75);
+    box-shadow: 0 0 50px 5px rgba(255, 255, 255, 0.25);
+    mix-blend-mode: overlay;
+    transform: rotate(25.96deg) translate(75rem);
+}
+.background .square:nth-child(3)::after{
+    content: "";
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    background-color: rgba(255, 255, 255 0.75);
+    box-shadow: 0 0 50px 5px rgba(255, 255, 255, 0.25);
+    mix-blend-mode: overlay;
+    transform: rotate(25.96deg) translate(50rem);
+}
+.background .square:nth-child(3)::before{
+    content: "";
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    background-color: rgba(255, 255, 255 0.75);
+    box-shadow: 0 0 50px 5px rgba(255, 255, 255, 0.25);
+    mix-blend-mode: overlay;
+    transform: rotate(-25.96deg) translate(32rem);
+}
+
+.background .square:nth-child(4){
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    background-color: rgba(255, 255, 255 0.75);
+    box-shadow: 0 0 50px 5px rgba(255, 255, 255, 0.25);
+    mix-blend-mode: overlay;
+    transform: rotate(0deg) translateY(50rem) translateX(5.3rem);
+}
+.background .square:nth-child(4)::after{
+    content: "";
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    background-color: rgba(255, 255, 255 0.75);
+    box-shadow: 0 0 50px 5px rgba(255, 255, 255, 0.25);
+    mix-blend-mode: overlay;
+    transform: rotate(0deg) translateY(32.6rem) translateX(12.5rem);
+}
+.background .square:nth-child(4)::before{
+    content: "";
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    background-color: rgba(255, 255, 255 0.75);
+    box-shadow: 0 0 50px 5px rgba(255, 255, 255, 0.25);
+    mix-blend-mode: overlay;
+    transform: rotate(22.5deg) translateY(-12.5rem) translateX(8.69rem);
+}
